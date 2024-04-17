@@ -46,9 +46,12 @@ const Header = () => {
                 <p className="text-sm"></p>
               </div>
             </div>
-            <div className="px-3 py-1 rounded-full text-white bg-red-600 hover:bg-red-700">
+            <Link
+              to={"/login"}
+              className="px-3 py-1 rounded-full text-white bg-red-600 hover:bg-red-700"
+            >
               Login
-            </div>
+            </Link>
           </div>
         </div>
       </header>
