@@ -7,6 +7,33 @@ import loginIcons from "../assets/signin.gif";
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  //
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+    name: "",
+    confirmPassword: "",
+    profilePic: "",
+  });
+
+  //
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+
+    setData((preve) => {
+      return {
+        ...preve,
+        [name]: value,
+      };
+    });
+  };
+
+  //
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <section id="signup">
@@ -26,7 +53,7 @@ const SignUp = () => {
               </form>
             </div>
 
-            <form className="pt-6 flex flex-col gap-2">
+            <form className="pt-6 flex flex-col gap-2 onSubmit={handleSubmit}">
               <div className="grid">
                 <label>Name : </label>
                 <div className="bg-slate-100 p-2">
@@ -34,6 +61,8 @@ const SignUp = () => {
                     type="text"
                     placeholder="enter your name"
                     name="name"
+                    value={data.name}
+                    onChange={handleOnChange}
                     required
                     className="w-full h-full outline-none bg-transparent"
                   />
@@ -46,6 +75,8 @@ const SignUp = () => {
                     type="email"
                     placeholder="enter email"
                     name="email"
+                    value={data.email}
+                    onChange={handleOnChange}
                     required
                     className="w-full h-full outline-none bg-transparent"
                   />
@@ -58,7 +89,9 @@ const SignUp = () => {
                   <input
                     type={showPassword ? "text" : "password"}
                     placeholder="enter password"
+                    value={data.password}
                     name="password"
+                    onChange={handleOnChange}
                     required
                     className="w-full h-full outline-none bg-transparent"
                   />
@@ -77,7 +110,9 @@ const SignUp = () => {
                   <input
                     type={showConfirmPassword ? "text" : "password"}
                     placeholder="enter confirm password"
+                    value={data.confirmPassword}
                     name="confirmPassword"
+                    onChange={handleOnChange}
                     required
                     className="w-full h-full outline-none bg-transparent"
                   />
