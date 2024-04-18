@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import loginIcons from "../assets/signin.gif";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -10,10 +11,10 @@ const SignUp = () => {
     <>
       <section id="signup">
         <div className="mx-auto container p-4">
-          <div className="bg-white p-5 w-full max-w-sm mx-auto">
+          <div className="bg-white p-5 w-full max-w-sm mx-auto mt-20 bg-slate-50">
             <div className="w-20 h-20 mx-auto relative overflow-hidden rounded-full">
               <div>
-                {/* <img src={data.profilePic || loginIcons} alt="login icons" /> */}
+                <img src={loginIcons} alt="login icons" />
               </div>
               <form>
                 <label>
