@@ -6,6 +6,29 @@ import loginIcons from "../assets/signin.gif";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+
+  //
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+
+    setData((preve) => {
+      return {
+        ...preve,
+        [name]: value,
+      };
+    });
+  };
+
+  //
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
+  console.log("login data", data);
 
   return (
     <>
@@ -16,7 +39,7 @@ const Login = () => {
               <img src={loginIcons} alt="login icons" />
             </div>
 
-            <form className="pt-6 flex flex-col gap-2">
+            <form className="pt-6 flex flex-col gap-2 onSubmit={handleSubmit}">
               <div className="grid">
                 <label>Email : </label>
                 <div className="bg-slate-100 p-2">
@@ -24,6 +47,8 @@ const Login = () => {
                     type="email"
                     placeholder="enter email"
                     name="email"
+                    value={data.email}
+                    onChange={handleOnChange}
                     className="w-full h-full outline-none bg-transparent"
                   />
                 </div>
@@ -36,6 +61,8 @@ const Login = () => {
                     type={showPassword ? "text" : "password"}
                     placeholder="enter password"
                     name="password"
+                    value={data.password}
+                    onChange={handleOnChange}
                     className="w-full h-full outline-none bg-transparent"
                   />
                   <div
