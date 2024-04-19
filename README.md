@@ -3,10 +3,15 @@ Shopease Mern is a full-stack e-commerce platform built using the MERN stack (Mo
 
 ## Features
 Product Management: Easily add, edit, and delete products with rich media support.
+
 User Authentication: Secure user authentication and authorization for both customers and administrators.
+
 Shopping Cart: Intuitive shopping cart functionality with real-time updates.
+
 Order Management: Efficient order processing and management for administrators.
+
 Payment Integration: Seamless integration with popular payment gateways for secure transactions.
+
 Responsive Design: A mobile-friendly interface to ensure a smooth shopping experience across devices.
 
 ## Installation
